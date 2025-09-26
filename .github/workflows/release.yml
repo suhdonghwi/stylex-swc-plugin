@@ -208,18 +208,18 @@ jobs:
         run: |
           git checkout ${{ needs.calculate-version.outputs.new_version }}
 
-      - name: 🚀 Create Release
-        uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          prerelease: ${{ github.event.inputs.prerelease }}
-          generate_release_notes: true
-          draft: true
-          fail_on_unmatched_files: true
-          tag_name: ${{ needs.calculate-version.outputs.new_version }}
-          target_commitish: ${{ github.sha }}
-          name: ${{ needs.calculate-version.outputs.new_version }}
+      # - name: 🚀 Create Release
+      #   uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     prerelease: ${{ github.event.inputs.prerelease }}
+      #     generate_release_notes: true
+      #     draft: true
+      #     fail_on_unmatched_files: true
+      #     tag_name: ${{ needs.calculate-version.outputs.new_version }}
+      #     target_commitish: ${{ github.sha }}
+      #     name: ${{ needs.calculate-version.outputs.new_version }}
 
   upload-npm:
     name: Upload ${{ needs.calculate-version.outputs.new_version }} version to NPM
