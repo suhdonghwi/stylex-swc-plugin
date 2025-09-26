@@ -335,20 +335,18 @@ jobs:
       - name: Publish
         run: |
           if [[ "${{ github.ref }}" =~ ^refs/tags/[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-            pnpm publish -r --access public --no-git-checks --report-summary
+            echo "//nexus-shared.toss.bz/repository/npm-shared/:_auth=${NEXUS_SHARED_IDENT}" >> ~/.npmrc
+            pnpm publish -r --tag toss --access public --no-git-checks --report-summary
           elif [[ "${{ github.ref }}" =~ ^refs/tags/[0-9]+\.[0-9]+\.[0-9]+-.*$ ]]; then
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-            pnpm publish -r --tag next --access public --no-git-checks --report-summary
+            echo "//nexus-shared.toss.bz/repository/npm-shared/:_auth=${NEXUS_SHARED_IDENT}" >> ~/.npmrc
+            pnpm publish -r --tag toss-next --access public --no-git-checks --report-summary
             git diff
             cat ./pnpm-publish-summary.json
           else
             echo "Not a release, skipping publish"
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          NEXUS_SHARED_IDENT: ${{ secrets.NEXUS_SHARED_IDENT }}
   cleanup:
     needs: [publish]
     runs-on: [Linux]
