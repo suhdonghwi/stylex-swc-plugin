@@ -4,8 +4,7 @@ StyleX is a JavaScript library developed by Meta for defining styles optimized
 for user interfaces. You can find the official repository
 [here](https://www.github.com/facebook/stylex).
 
-> [!WARNING]
-> This is an unofficial style compiler for StyleX.
+> [!WARNING] This is an unofficial style compiler for StyleX.
 
 ## Overview
 
@@ -13,8 +12,7 @@ This package provides an unofficial, high-performance compiler for StyleX, a
 popular library from Meta for building optimized user interfaces. It leverages
 the power of NAPI-RS and SWC to achieve several key advantages:
 
-> [!IMPORTANT]
-> The usage of StyleX does not change. All changes are internal.
+> [!IMPORTANT] The usage of StyleX does not change. All changes are internal.
 
 - Faster Build Times: By utilizing SWC instead of Babel, you can potentially
   experience significant speed improvements during StyleX processing.
@@ -44,7 +42,7 @@ the power of NAPI-RS and SWC to achieve several key advantages:
 To install the package, run the following command:
 
 ```bash
-npm install --save-dev @stylexswc/rs-compiler
+npm install --save-dev @stylexswc-toss/rs-compiler
 ```
 
 ### Transformation Process
@@ -53,7 +51,7 @@ Internally, this compiler takes your StyleX code and transforms it into a format
 optimized for further processing.
 
 ```ts
-var { transform } = require('@stylexswc/compiler-rs');
+var { transform } = require('@stylexswc-toss/compiler-rs');
 
 /// ...other logic
 
@@ -130,8 +128,7 @@ const styleProps = {
 
 ## Compatibility
 
-> [!IMPORTANT]
-> The current resolution of the `exports` field from
+> [!IMPORTANT] The current resolution of the `exports` field from
 > `package. json` is only partially supported, so if you encounter problems,
 > please open an
 > [issue](https://github.com/Dwlad90/stylex-swc-plugin/issues/new) with an
@@ -139,11 +136,14 @@ const styleProps = {
 
 ## Debug
 
-You can enable debug logging for the StyleX compiler using the `STYLEX_DEBUG` environment variable. This is useful for troubleshooting and understanding the internal processing of StyleX code.
+You can enable debug logging for the StyleX compiler using the `STYLEX_DEBUG`
+environment variable. This is useful for troubleshooting and understanding the
+internal processing of StyleX code.
 
 ### Log Levels
 
 The following log levels are available:
+
 - `error`: Only shows error messages
 - `warn`: Shows warnings and errors (default)
 - `info`: Shows informational messages, warnings, and errors
@@ -163,11 +163,13 @@ STYLEX_DEBUG=trace npm run dev
 ```
 
 For Windows Command Prompt:
+
 ```cmd
 set STYLEX_DEBUG=debug && npm run build
 ```
 
 For PowerShell:
+
 ```powershell
 $env:STYLEX_DEBUG="debug"; npm run build
 ```

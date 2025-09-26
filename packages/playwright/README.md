@@ -1,28 +1,31 @@
-# @stylexswc/playwright
+# @stylexswc-toss/playwright
 
-Playwright test configuration that enables visual regression testing for StyleX applications.
+Playwright test configuration that enables visual regression testing for StyleX
+applications.
 
 ## Overview
 
-The `@stylexswc/playwright` package provides a pre-configured setup for Playwright visual testing
-that works seamlessly with StyleX. This allows you to write visual regression tests for
-your StyleX components, ensuring your UI remains consistent across browsers and devices.
+The `@stylexswc-toss/playwright` package provides a pre-configured setup for
+Playwright visual testing that works seamlessly with StyleX. This allows you to
+write visual regression tests for your StyleX components, ensuring your UI
+remains consistent across browsers and devices.
 
 ## Installation
 
 To install the package, run the following command:
 
 ```bash
-npm install --save-dev @stylexswc/playwright
+npm install --save-dev @stylexswc-toss/playwright
 ```
 
 ## Configuration
 
-The package exports a default Playwright configuration that you can use or extend. Here's an example:
+The package exports a default Playwright configuration that you can use or
+extend. Here's an example:
 
 ```typescript
 // playwright.config.ts
-import { defineConfig } from '@stylexswc/playwright';
+import { defineConfig } from '@stylexswc-toss/playwright';
 
 export default defineConfig({
   // You can override any default options here
@@ -35,10 +38,11 @@ export default defineConfig({
 
 ## Usage
 
-The package provides extended test functions with custom screenshot capabilities:
+The package provides extended test functions with custom screenshot
+capabilities:
 
 ```typescript
-import { test, expect } from '@stylexswc/playwright';
+import { test, expect } from '@stylexswc-toss/playwright';
 
 test('component renders correctly', async ({ page, screenshotOptions }) => {
   await page.goto('/my-component');
@@ -62,7 +66,7 @@ You can customize the configuration further:
 
 ```typescript
 // playwright.config.ts
-import { defineConfig } from '@stylexswc/playwright';
+import { defineConfig } from '@stylexswc-toss/playwright';
 
 export default defineConfig({
   // Custom snapshot directory
@@ -92,12 +96,15 @@ export default defineConfig({
 A complete example of a visual test suite:
 
 ```typescript
-import { test, expect } from '@stylexswc/playwright';
+import { test, expect } from '@stylexswc-toss/playwright';
 
 test.describe('Button component', () => {
   test('renders in default state', async ({ page, screenshotOptions }) => {
     await page.goto('/components/button');
-    await expect(page).toHaveScreenshot('button-default.png', screenshotOptions);
+    await expect(page).toHaveScreenshot(
+      'button-default.png',
+      screenshotOptions
+    );
   });
 
   test('renders in hover state', async ({ page, screenshotOptions }) => {

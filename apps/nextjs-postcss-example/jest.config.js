@@ -11,7 +11,7 @@ const customJestConfig = {
       'jest-chain-transform',
       {
         transformers: [
-          ["@stylexswc/jest", {
+          ["@stylexswc-toss/jest", {
             rsOptions: {
               aliases: {
                 '@/*': [path.join(rootDir, '*')],

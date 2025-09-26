@@ -9,7 +9,7 @@ compiler that includes the StyleX SWC code transformation under the hood.
 To install the package, run the following command:
 
 ```bash
-npm install --save-dev @stylexswc/unplugin
+npm install --save-dev @stylexswc-toss/unplugin
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ folder.
 
 ```ts
 // vite.config.ts
-import StylexRsPlugin from '@stylexswc/unplugin/vite';
+import StylexRsPlugin from '@stylexswc-toss/unplugin/vite';
 
 export default defineConfig({
   plugins: [
@@ -45,7 +45,7 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import StylexRsPlugin from '@stylexswc/unplugin/rollup';
+import StylexRsPlugin from '@stylexswc-toss/unplugin/rollup';
 
 export default {
   plugins: [
@@ -66,7 +66,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('@stylexswc/unplugin/webpack')({
+    require('@stylexswc-toss/unplugin/webpack')({
       /* options */
     }),
   ],
@@ -83,7 +83,7 @@ module.exports = {
 export default defineNuxtConfig({
   modules: [
     [
-      '@stylexswc/unplugin/nuxt',
+      '@stylexswc-toss/unplugin/nuxt',
       {
         /* options */
       },
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('@stylexswc/unplugin/webpack')({
+      require('@stylexswc-toss/unplugin/webpack')({
         /* options */
       }),
     ],
@@ -121,7 +121,7 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild';
-import StylexRsPlugin from '@stylexswc/unplugin/esbuild';
+import StylexRsPlugin from '@stylexswc-toss/unplugin/esbuild';
 
 build({
   plugins: [StylexRsPlugin()],

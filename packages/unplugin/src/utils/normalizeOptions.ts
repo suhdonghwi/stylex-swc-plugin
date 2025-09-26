@@ -1,4 +1,4 @@
-import { normalizeRsOptions } from '@stylexswc/rs-compiler';
+import { normalizeRsOptions } from '@stylexswc-toss/rs-compiler';
 
 import type { UnpluginStylexRSOptions } from '../types';
 

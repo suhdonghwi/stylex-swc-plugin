@@ -1,5 +1,5 @@
 {
-  "name": "@stylexswc/path-resolver",
+  "name": "@stylexswc-toss/path-resolver",
   "description": "SWC lib for path imports resolving for SWC StyleX plugin",
   "version": "0.11.0",
   "private": true,

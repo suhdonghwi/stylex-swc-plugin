@@ -40,28 +40,28 @@
         "dist/eslint_report.json"
       ]
     },
-    "@stylexswc/rs-compiler#lint:check": {
+    "@stylexswc-toss/rs-compiler#lint:check": {
       "dependsOn": [
         "^build",
         "build",
         "clean"
       ]
     },
-    "@stylexswc/path-resolver#lint:check": {
+    "@stylexswc-toss/path-resolver#lint:check": {
       "dependsOn": [
         "^build",
         "build",
         "clean"
       ]
     },
-    "@stylexswc/shared#lint:check": {
+    "@stylexswc-toss/shared#lint:check": {
       "dependsOn": [
         "^build",
         "build",
         "clean"
       ]
     },
-    "@stylexswc/test-parser#lint:check": {
+    "@stylexswc-toss/test-parser#lint:check": {
       "dependsOn": [
         "^build",
         "build",
