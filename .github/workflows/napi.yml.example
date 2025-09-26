@@ -130,7 +130,7 @@ jobs:
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
   build-freebsd:
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     name: Build FreeBSD
     steps:
       - uses: actions/checkout@v4
@@ -226,7 +226,7 @@ jobs:
         node:
           - '18'
           - '20'
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
@@ -256,7 +256,7 @@ jobs:
         node:
           - '18'
           - '20'
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - uses: actions/checkout@v4
       - name: Setup node
@@ -288,7 +288,7 @@ jobs:
         node:
           - '18'
           - '20'
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - uses: actions/checkout@v4
       - name: Download artifacts
@@ -322,7 +322,7 @@ jobs:
     name: Test bindings on aarch64-unknown-linux-musl - node@lts
     needs:
       - build
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - uses: actions/checkout@v4
       - name: Download artifacts
@@ -361,7 +361,7 @@ jobs:
         node:
           - '18'
           - '20'
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - uses: actions/checkout@v4
       - name: Download artifacts
@@ -392,7 +392,7 @@ jobs:
             ls -la
   publish:
     name: Publish
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     needs:
       - build-freebsd
       - test-macOS-windows-binding

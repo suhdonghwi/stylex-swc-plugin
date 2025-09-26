@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   sync-dependencies:
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     permissions:
       contents: write
@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Comment on PR
-        if: steps.commit-changes.outputs.changes_pushed == 'true'  # Only run if changes were pushed
+        if: steps.commit-changes.outputs.changes_pushed == 'true' # Only run if changes were pushed
         run: |
           gh pr comment ${{ github.event.pull_request.number }} --body "I've synchronized dependencies across the workspace to ensure consistency."
         env:

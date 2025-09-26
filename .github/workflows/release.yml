@@ -4,10 +4,10 @@ run-name:
   inputs.prerelease-type) || 'stable' }} | ${{ github.ref_name }} | @${{ github.actor }}
 
 permissions:
-      contents: write
-      statuses: write
-      repository-projects: write
-      actions: write
+  contents: write
+  statuses: write
+  repository-projects: write
+  actions: write
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ concurrency:
 jobs:
   inputs-validation:
     name: Validate inputs
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🧪 Validate inputs
         id: validate
@@ -55,7 +55,7 @@ jobs:
           echo "All inputs are valid"
   calculate-version:
     name: Calculate version
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     needs: inputs-validation
     outputs:
       new_version: ${{ steps.calculate.outputs.new_version }}
@@ -133,7 +133,7 @@ jobs:
       name: release-approval
     env:
       HUSKY_SKIP_HOOKS: 1
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
@@ -194,7 +194,7 @@ jobs:
   release-draft:
     name: Draft release ${{ needs.calculate-version.outputs.new_version }}
     needs: [pre-release, calculate-version]
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
@@ -224,7 +224,7 @@ jobs:
   upload-npm:
     name: Upload ${{ needs.calculate-version.outputs.new_version }} version to NPM
     needs: [release-draft, calculate-version]
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     environment:
       name: changlog-approval
     steps:
@@ -314,7 +314,7 @@ jobs:
   release:
     name: Release ${{ needs.calculate-version.outputs.new_version }}
     needs: [upload-npm, calculate-version]
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
@@ -342,7 +342,7 @@ jobs:
   merge-develop:
     name: Merge to develop branch
     needs: [release, calculate-version]
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
@@ -364,7 +364,7 @@ jobs:
   merge-master:
     name: Merge to master branch
     needs: [merge-develop, calculate-version]
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
     steps:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4

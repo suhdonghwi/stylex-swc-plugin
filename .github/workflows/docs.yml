@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   docs:
-    runs-on: ubuntu-latest
+    runs-on: [Linux]
 
     permissions:
       pages: write
