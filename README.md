@@ -1,37 +1,50 @@
 # StyleX in Rust &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Dwlad90/stylex-swc-plugin/blob/develop/LICENSE) [![npm version](https://img.shields.io/npm/v/@stylexswc/rs-compiler.svg?style=flat)](https://www.npmjs.com/package/@stylexswc/rs-compiler) ![GitHub tag check runs](https://img.shields.io/github/check-runs/Dwlad90/stylex-swc-plugin/0.11.0?label=Release%20status) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dwlad90/stylex-swc-plugin/pr-validation.yml?branch=develop&label=Project%20Health)
 
-> **Community-driven, high-performance StyleX compiler and tooling ecosystem built with Rust**
+> **Community-driven, high-performance StyleX compiler and tooling ecosystem
+> built with Rust**
 
-> [!IMPORTANT]
-> This is a **community-written** implementation of StyleX tooling. Built with love by the open source community, it aims to provide a high-performance alternative to the official StyleX tooling while not being affiliated with or officially supported by Meta/Facebook.
+> [!IMPORTANT] This is a **community-written** implementation of StyleX tooling.
+> Built with love by the open source community, it aims to provide a
+> high-performance alternative to the official StyleX tooling while not being
+> affiliated with or officially supported by Meta/Facebook.
 
-A comprehensive monorepo providing a community-built [`napi-rs`](https://napi.rs/) compiler, [SWC](https://swc.rs/) plugin, and complete CSS parser for [StyleX](https://github.com/facebook/stylex). Built from the ground up in Rust for maximum performance and developer experience.
+A comprehensive monorepo providing a community-built
+[`napi-rs`](https://napi.rs/) compiler, [SWC](https://swc.rs/) plugin, and
+complete CSS parser for [StyleX](https://github.com/facebook/stylex). Built from
+the ground up in Rust for maximum performance and developer experience.
 
 ## 🚀 Why StyleX + Rust?
 
-- **⚡ Blazing Fast**: Significantly faster build times by leveraging NAPI-RS/SWC instead of Babel
-- **🔧 Performance-First Alternative**: Built from the ground up in Rust for maximum speed and efficiency
-- **📦 Complete Ecosystem**: Community-built toolkit covering compilation to CSS parsing
-- **🌐 Universal Integration**: Works seamlessly with Next.js, Webpack, Vite, Rollup, and more
+- **⚡ Blazing Fast**: Significantly faster build times by leveraging
+  NAPI-RS/SWC instead of Babel
+- **🔧 Performance-First Alternative**: Built from the ground up in Rust for
+  maximum speed and efficiency
+- **📦 Complete Ecosystem**: Community-built toolkit covering compilation to CSS
+  parsing
+- **🌐 Universal Integration**: Works seamlessly with Next.js, Webpack, Vite,
+  Rollup, and more
 - **🛡️ Type Safe**: Full Rust implementation with comprehensive error handling
-- **🤝 Community Driven**: Open source with active community contributions and support
+- **🤝 Community Driven**: Open source with active community contributions and
+  support
 
-Perfect for developers who want blazing-fast StyleX compilation and are excited about Rust-powered tooling!
+Perfect for developers who want blazing-fast StyleX compilation and are excited
+about Rust-powered tooling!
 
 ## 📦 Quick Start
 
 ```bash
 # For Next.js projects
-npm install --save-dev @stylexswc/nextjs-plugin
+npm install --save-dev @tossteam/stylexswc-nextjs-plugin
 
 # For other build tools
-npm install --save-dev @stylexswc/unplugin
+npm install --save-dev @tossteam/stylexswc-unplugin
 ```
 
 ### Next.js Setup
+
 ```javascript
 // next.config.js
-const stylexPlugin = require('@stylexswc/nextjs-plugin');
+const stylexPlugin = require('@tossteam/stylexswc-nextjs-plugin');
 
 module.exports = stylexPlugin({
   rsOptions: {
@@ -42,45 +55,57 @@ module.exports = stylexPlugin({
 
 ## 📁 Project Architecture
 
-This monorepo is organized into specialized packages for maximum modularity and reusability:
+This monorepo is organized into specialized packages for maximum modularity and
+reusability:
 
 ### 🔥 Core Engines
 
-- **[`rs-compiler`](./crates/stylex-rs-compiler)** - High-performance NAPI-RS compiler for StyleX transformation
-- **[`css-parser`](./crates/stylex-css-parser)** - Comprehensive CSS value parser with extensive test coverage, supporting colors, lengths, calc expressions, transforms, and media queries
-- **[`shared`](./crates/stylex-shared)** - Shared utilities and configurations for SWC transformations
+- **[`rs-compiler`](./crates/stylex-rs-compiler)** - High-performance NAPI-RS
+  compiler for StyleX transformation
+- **[`css-parser`](./crates/stylex-css-parser)** - Comprehensive CSS value
+  parser with extensive test coverage, supporting colors, lengths, calc
+  expressions, transforms, and media queries
+- **[`shared`](./crates/stylex-shared)** - Shared utilities and configurations
+  for SWC transformations
 
 ### 🔌 Framework Integrations
 
-- **[`nextjs-plugin`](./packages/nextjs-plugin)** - Next.js configuration wrapper with seamless SWC integration
-- **[`unplugin`](./packages/unplugin)** - Universal plugin supporting Vite, Webpack, Rollup, Rspack, and 8+ build tools
+- **[`nextjs-plugin`](./packages/nextjs-plugin)** - Next.js configuration
+  wrapper with seamless SWC integration
+- **[`unplugin`](./packages/unplugin)** - Universal plugin supporting Vite,
+  Webpack, Rollup, Rspack, and 8+ build tools
 - **[`jest`](./packages/jest)** - Jest transformer for StyleX testing workflows
-- **[`postcss-plugin`](./packages/postcss-plugin)** - PostCSS integration for existing CSS pipelines
+- **[`postcss-plugin`](./packages/postcss-plugin)** - PostCSS integration for
+  existing CSS pipelines
 
 ### ⚙️ Developer Tools
 
-- **[`path-resolver`](./crates/stylex-path-resolver)** - Advanced path resolution with partial `package.json` exports support
-- **[`test-parser`](./crates/stylex-test-parser)** - Jest test parser for maintaining compatibility with official StyleX
-- **[`design-system`](./packages/design-system)** - Internal design system for consistent workspace examples
+- **[`path-resolver`](./crates/stylex-path-resolver)** - Advanced path
+  resolution with partial `package.json` exports support
+- **[`test-parser`](./crates/stylex-test-parser)** - Jest test parser for
+  maintaining compatibility with official StyleX
+- **[`design-system`](./packages/design-system)** - Internal design system for
+  consistent workspace examples
 
 ### 🏗️ Development Infrastructure
 
 - **[`eslint-config`](./packages/eslint-config)** - Shared ESLint configuration
-- **[`typescript-config`](./packages/typescript-config)** - TypeScript configuration presets
+- **[`typescript-config`](./packages/typescript-config)** - TypeScript
+  configuration presets
 - **[`playwright`](./packages/playwright)** - Visual regression testing setup
 
 ## 🎯 Build Tool Ecosystem
 
-| Tool | Package | Experience |
-|------|---------|------------|
-| Next.js | `@stylexswc/nextjs-plugin` | 🚀 Native SWC Integration |
-| Vite | `@stylexswc/unplugin` | ⚡ Lightning Fast HMR |
-| Webpack | `@stylexswc/unplugin` | 🔧 Seamless Integration |
-| Rollup | `@stylexswc/unplugin` | 📦 Optimized Bundling |
-| Jest | `@stylexswc/jest` | 🧪 Reliable Testing |
-| PostCSS | `@stylexswc/postcss-plugin` | 🎨 CSS Pipeline Ready |
-| Rspack | `@stylexswc/unplugin` | 🚀 Rust-Powered Speed |
-| Farm, Rsbuild, Solid | `@stylexswc/unplugin` | 🌟 Modern Build Experience |
+| Tool                 | Package                              | Experience                 |
+| -------------------- | ------------------------------------ | -------------------------- |
+| Next.js              | `@tossteam/stylexswc-nextjs-plugin`  | 🚀 Native SWC Integration  |
+| Vite                 | `@tossteam/stylexswc-unplugin`       | ⚡ Lightning Fast HMR      |
+| Webpack              | `@tossteam/stylexswc-unplugin`       | 🔧 Seamless Integration    |
+| Rollup               | `@tossteam/stylexswc-unplugin`       | 📦 Optimized Bundling      |
+| Jest                 | `@tossteam/stylexswc-jest`           | 🧪 Reliable Testing        |
+| PostCSS              | `@tossteam/stylexswc-postcss-plugin` | 🎨 CSS Pipeline Ready      |
+| Rspack               | `@tossteam/stylexswc-unplugin`       | 🚀 Rust-Powered Speed      |
+| Farm, Rsbuild, Solid | `@tossteam/stylexswc-unplugin`       | 🌟 Modern Build Experience |
 
 ## 🔧 Development
 
@@ -261,7 +286,8 @@ pnpm typecheck
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our contributing guidelines and submit pull requests to the `develop` branch.
+Contributions are welcome! Please read our contributing guidelines and submit
+pull requests to the `develop` branch.
 
 ## 📄 License
 

@@ -1,6 +1,6 @@
 import stylexBabelPlugin from '@stylexjs/babel-plugin';
-import { transform as stylexTransform, normalizeRsOptions } from '@stylexswc/rs-compiler';
-import type { StyleXOptions } from '@stylexswc/rs-compiler';
+import { transform as stylexTransform, normalizeRsOptions } from '@tossteam/stylexswc-rs-compiler';
+import type { StyleXOptions } from '@tossteam/stylexswc-rs-compiler';
 
 import type { TransformOptions, StyleXPluginOption } from './types';
 
@@ -66,7 +66,7 @@ export default function createBundler() {
     } catch (error) {
       if (shouldSkipTransformError) {
         console.warn(
-          `[@stylexswc/postcss-plugin] Failed to transform "${id}": ${(error as Error).message}`
+          `[@tossteam/stylexswc-postcss-plugin] Failed to transform "${id}": ${(error as Error).message}`
         );
 
         return transformResult;

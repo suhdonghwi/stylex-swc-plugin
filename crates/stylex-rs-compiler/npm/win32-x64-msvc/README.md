@@ -1,3 +1,4 @@
-# `@stylexswc/rs-compiler-win32-x64-msvc`
+# `@tossteam/stylexswc-rs-compiler-win32-x64-msvc`
 
-This is the **x86_64-pc-windows-msvc** binary for `@stylexswc/rs-compiler`
+This is the **x86_64-pc-windows-msvc** binary for
+`@tossteam/stylexswc-rs-compiler`

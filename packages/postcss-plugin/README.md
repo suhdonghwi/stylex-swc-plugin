@@ -9,7 +9,7 @@ compiler that includes the StyleX SWC code transformation under the hood.
 To install the package, run the following command:
 
 ```bash
-npm install --save-dev @stylexswc/postcss-plugin
+npm install --save-dev @tossteam/stylexswc-postcss-plugin
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ Use on of the plugins to process JS/TS files with StyleX code. For example:
 ```js
 /// next.config.js
 const path = require('path');
-const stylexPlugin = require('@stylexswc/nextjs-plugin');
+const stylexPlugin = require('@tossteam/stylexswc-nextjs-plugin');
 const rootDir = __dirname;
 
 module.exports = stylexPlugin({
@@ -53,20 +53,18 @@ module.exports = stylexPlugin({
 });
 ```
 
-> [!WARNING]
-> Each plugin of `@stylexswc` namespace accepts an `extractCSS`
+> [!WARNING] Each plugin of `@stylexswc` namespace accepts an `extractCSS`
 > option to control CSS extraction. When using the `postcss` plugin, this option
 > should be set to `false` to avoid double generation of CSS files with StyleX
 > styles.
 
 &nbsp;
 
-> [!NOTE]
-> This approach requires transpiling JS/TS files with StyleX code twice:
+> [!NOTE] This approach requires transpiling JS/TS files with StyleX code twice:
 > first the source code and then using the PostCSS plugin. To avoid this
-> behavior when using `NextJS`, use the regular `@stylexswc/nextjs-plugin`
-> passing the `transformCss` parameter to transform the generated CSS if it's
-> possible, for example:
+> behavior when using `NextJS`, use the regular
+> `@tossteam/stylexswc-nextjs-plugin` passing the `transformCss` parameter to
+> transform the generated CSS if it's possible, for example:
 >
 > ```js
 > /// next.config.js

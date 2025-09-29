@@ -9,13 +9,13 @@ compiler that includes the StyleX SWC code transformation under the hood.
 To install the package, run the following command:
 
 ```bash
-npm install --save-dev @stylexswc/webpack-plugin
+npm install --save-dev @tossteam/stylexswc-webpack-plugin
 ```
 
-Please install `@stylexswc/rs-compiler` if you haven't done so already:
+Please install `@tossteam/stylexswc-rs-compiler` if you haven't done so already:
 
 ```bash
-npm install --save-dev @stylexswc/rs-compiler
+npm install --save-dev @tossteam/stylexswc-rs-compiler
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install --save-dev @stylexswc/rs-compiler
 Modify Webpack config. For example:
 
 ```js
-const StylexPlugin = require('@stylexswc/webpack-plugin');
+const StylexPlugin = require('@tossteam/stylexswc-webpack-plugin');
 const path = require('path');
 
 const config = (env, argv) => ({
@@ -55,7 +55,8 @@ The plugin accepts the following configuration options:
 - Type: `StyleXOptions`
 - Optional
 - Default: `{}`
-- Description: StyleX compiler options that extend from `@stylexswc/rs-compiler`
+- Description: StyleX compiler options that extend from
+  `@tossteam/stylexswc-rs-compiler`
 
 ### `fileName`
 

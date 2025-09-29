@@ -1,4 +1,4 @@
-import type { StyleXOptions } from '@stylexswc/rs-compiler';
+import type { StyleXOptions } from '@tossteam/stylexswc-rs-compiler';
 
 export interface StyleXPluginOption {
   /**

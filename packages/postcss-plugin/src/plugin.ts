@@ -4,7 +4,7 @@ import createBuilder from './builder';
 import type { StyleXPluginOption } from './types';
 
 function createPlugin() {
-  const PLUGIN_NAME = '@stylexswc/postcss-plugin';
+  const PLUGIN_NAME = '@tossteam/stylexswc-postcss-plugin';
 
   const builder = createBuilder();
 
