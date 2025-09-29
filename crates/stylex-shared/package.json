@@ -9,7 +9,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "private"
+    "access": "restricted"
   },
   "scripts": {
     "clean": "del-cli dist",

@@ -9,7 +9,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "private"
+    "access": "restricted"
   },
   "scripts": {
     "build": "scripty --rust",

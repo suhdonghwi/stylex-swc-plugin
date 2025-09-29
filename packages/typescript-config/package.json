@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "publishConfig": {
-    "access": "private"
+    "access": "restricted"
   },
   "repository": "dwlad90/stylex-swc-plugin"
 }

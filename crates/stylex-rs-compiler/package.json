@@ -12,7 +12,7 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "private"
+    "access": "restricted"
   },
   "scripts": {
     "artifacts": "napi artifacts",
