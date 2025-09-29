@@ -8,7 +8,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "scripts": {
     "clean": "del-cli dist",

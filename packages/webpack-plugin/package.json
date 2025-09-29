@@ -10,7 +10,7 @@
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "access": "private"
   },
   "scripts": {
     "build": "scripty --ts",
